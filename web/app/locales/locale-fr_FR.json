@@ -1,0 +1,24 @@
+{
+    "TRK_NPUT_HINT": "Entrez un identifiant de livraison",
+    "SUBMIT_BTN": "Soumettre",
+    "ohmStatus": {
+        "CREATED": "Créée",
+        "PREPARING": "En préparation",
+        "READY": "Prête",
+        "IN_DELIVERY": "En livraison",
+        "DELIVERED": "Livrée",
+        "REFUSED": "Refusée"
+    },
+    "DESCRIPTION": "Description",
+    "AMPERES": "Ampère(s)",
+    "VOLTS": "Volt(s)",
+    "STATUS_UNKNOWN": "Statut inconnu",
+    "ORDER_STATUS_IS": "La commande d'id '{{id}}' est actuellement :",
+    "ORDER_NOT_FOUND": "La commande d'id '{{id}}' n'a pas été trouvée.",
+    "REQUEST_ERROR": "Une erreur est survenue. Veuillez prendre contact avec notre support.",
+    "STATUS_UPDATE": "Mise à jour du statut",
+    "UPD_STATUS_BTN": "Mettre à jour le statut",
+    "COMMENT_HINT": "Veuillez donner les raisons du refus de la commande par le client",
+    "COMMENT": "Commentaire",
+    "MANDATORY_FIELD": "Ce champ est obligatoire"
+}

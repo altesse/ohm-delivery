@@ -1,0 +1,24 @@
+{
+    "TRK_NPUT_HINT": "Enter your tracking id",
+    "SUBMIT_BTN": "Submit",
+    "ohmStatus": {
+        "CREATED": "Created",
+        "PREPARING": "In preparation",
+        "READY": "Ready to ship",
+        "IN_DELIVERY": "In delivery",
+        "DELIVERED": "Delivered",
+        "REFUSED": "Refused"
+    },
+    "DESCRIPTION": "Description",
+    "AMPERES": "Ampere(s)",
+    "VOLTS": "Volt(s)",
+    "STATUS_UNKNOWN": "Status unknown",
+    "ORDER_STATUS_IS": "Order with id '{{id}}' is currently:",
+    "ORDER_NOT_FOUND": "Order with id '{{id}}' was not found.",
+    "REQUEST_ERROR": "An error occurred. Please contact our support desk.",
+    "STATUS_UPDATE": "Status update",
+    "UPD_STATUS_BTN": "Update status",
+    "COMMENT_HINT": "Please provide the reasons of the client's refusal",
+    "COMMENT": "Comment",
+    "MANDATORY_FIELD": "This field is mandatory"
+}

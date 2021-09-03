@@ -20,6 +20,31 @@ To run the tests, go to the server directory and type:
 npm run test
 ```
 
+## What was done
+
+* Resistance information (minimal) & status query page for a user
+* Order & update query page for a driver. I created a different page for this since I imagine this would be served from another endpoint with different credentials
+* Tests are fixed (async + error in dataset and parenthesis mix-up)
+
+### The good 
+* It mostly works
+* An embryo of localization was attempted
+* A (feeble) attempt to use HTTP status codes
+
+### The bad
+* UI is terrible, but that was not my priority
+* The code is not modularized
+* JSDoc is minimal, by lack of time
+* No constants in 'utils' files or libs
+* The status update display for the driver page is based on the form input fields and not from a server response (the HTTP 'OK' server response is -- wrongly -- deemed sufficient) 
+
+### The ugly
+* I resorted to use the cors package to make it work (proxy config could have been used, maybe)
+* The server URL is hardcoded, due to time constraints
+* The status check when updating is done client-side, a shared lib could have been created but was not attempted by lack of time
+* No UTs were added, by lack of time
+* No services were created, and only one controller is used, due to time constraints
+
 ## Instructions:
 
 ### Web:

@@ -33,3 +33,31 @@ p {
     margin: auto;
     line-height: 2.0;
 }
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.block {
+    display: block;
+}
+
+.small-vert-margin {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.form-title {
+    font-family: "Open Sans";
+    font-weight: bold;
+    text-align: left;
+}
+
+.bold {
+    font-weight: bold;
+}

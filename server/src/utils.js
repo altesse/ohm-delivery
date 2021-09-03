@@ -7,15 +7,36 @@ const db = (async () => {
   const _db = await low(adapter);
   await _db.defaults(config).write();
   return _db;
-})()
+})();
 
 async function getOhmById(id) {
-    const _db = await db;
-    const ohm = _db.get('ohms')
+    return (await db).get('ohms')
         .find({ id })
-        .value()
-
-    return ohm;
+        .value();
 }
 
-module.exports = { getOhmById }
+async function getOhmByTrackingId(trackingId) {
+    return (await db).get('ohms')
+        .find({ trackingId })
+        .value();
+}
+
+async function getOhmStatusByTrackingId(trackingId) {
+    const ohm = await getOhmByTrackingId(trackingId);
+    return (ohm && { status: ohm.status, comment: ohm.comment }) || undefined;
+}
+
+async function updateOhmStatusByTrackingId(trackingId, newStatus, comment) {
+    // TODO: status check before update (value and lifecycle)
+    return (await db).get('ohms')
+        .find({ trackingId })
+        .assign(comment ? { status: newStatus, comment } : { status: newStatus })
+        .write();
+}
+
+module.exports = {
+    getOhmById,
+    getOhmByTrackingId,
+    getOhmStatusByTrackingId,
+    updateOhmStatusByTrackingId,
+}

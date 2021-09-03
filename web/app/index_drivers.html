@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-translate.min.js"></script>
+        <script src="lib/angular/angular-translate-loader-static-files.min.js"></script>
+        <script src="./utils.js"></script>
+        <script src="./main.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <title>Ohm Delivery</title>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>Ohm Delivery</h1>
+            <h2>Get shocked by the power</h2>
+        </div>
+        
+        <div ng-app="ohm-delivery" ng-controller="tracking">
+            <form ng-submit="queryStatusByTrackingId()">
+                <p>
+                    <input id="tracking" type="text" ng-model="trackingId" placeholder="{{ 'TRK_NPUT_HINT' | translate }}"/>
+                </p>
+                <p>
+                    <button id="formBtn" type="submit">{{ 'SUBMIT_BTN' | translate }}</button>
+                </p>
+                <p>
+                    <span ng-if="errorMessage">{{errorMessage}}</span>
+                </p>
+            </form>
+            <div class="center">{{ohmStatusMsg}} <span class="bold">{{ohmStatusI18n}}</span>.</div>
+            <div ng-if="ohmComment" class="margin-auto small-vert-margin">
+                <label class="block center">{{ 'COMMENT' | translate }}</label>
+                <textarea disabled class="block margin-auto" cols="80" rows="14">{{ohmComment}}</textarea>
+            </div>
+            <form ng-if="ohmStatus && !isFinal(ohmStatus)" ng-submit="updateOhmStatus()" class="center">
+                <fieldset>
+                    <legend class="form-title">{{ 'STATUS_UPDATE' | translate }}</legend>
+                    <select ng-model="ohmStatusSelected.value" ng-options="x.value as x.label for x in ohmStatusOptions"
+                            class="block margin-auto"
+                    ></select>
+                    <div ng-if="ohmStatusSelected.value === 'REFUSED'" class="small-vert-margin">
+                        <label class="block margin-auto">{{ 'COMMENT_HINT' | translate }}</label>
+                        <textarea required class="block margin-auto" cols="80" rows="14" id="comment" ng-model="$parent.$parent.refReason"></textarea>
+                        <span ng-if="updChckErrorMessage">{{updChckErrorMessage}}</span>
+                    </div>
+                    <button id="chgStatusBtn" type="submit" class="small-vert-margin">{{ 'UPD_STATUS_BTN' | translate }}</button>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
